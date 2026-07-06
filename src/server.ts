@@ -1,7 +1,8 @@
 import app from "./app";
+import config from "./config";
 import { prisma } from "./lib/prisma";
 
-const port=5000;
+
 
 
 const main=async()=>{
@@ -12,7 +13,7 @@ const main=async()=>{
         await prisma.$connect();
           console.log("databse connect")
        app.listen(5000,()=>{
-          console.log(`server is running on port 5000 ${port}`)
+          console.log(`server is running on port 5000 ${config.port}`)
        })
      }catch(error){
         console.error("Error starting the server", error)

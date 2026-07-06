@@ -1,0 +1,51 @@
+import bcrypt from "bcryptjs";
+import { prisma } from "../../lib/prisma";
+import type { RegisterUserPayload } from "./user.interface"
+import config from "../../config";
+
+
+const registerUserIntoDB=async(payload: RegisterUserPayload)=>{
+   
+    const {name, email,password, phone,divison,district,  }=payload;
+
+    const isUserExits= await prisma.users.findUnique({
+           where:{email}
+    })
+
+    if(isUserExits){
+         throw new Error("user already exits")
+    }
+
+    const hashPassword= await bcrypt.hash(password,Number(config.bcrypt_salt_rounds));
+
+    const createUser= await prisma.users.create({
+        data: {
+           name,
+           email,
+           password: hashPassword,
+           phone,
+           divison,
+           district,
+           
+
+        }
+    })
+
+   const user = await prisma.users.findUnique({
+          where: {
+                id: createUser.id,
+                email: createUser.email || email
+          },
+          omit:{
+                id: true,
+                password: true
+          }
+   })
+
+   return user;
+}
+
+
+export const userService={
+     registerUserIntoDB
+}

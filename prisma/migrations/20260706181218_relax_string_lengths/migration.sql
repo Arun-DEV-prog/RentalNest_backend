@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "properties" ALTER COLUMN "division" SET DATA TYPE VARCHAR(100);
+
+-- AlterTable
+ALTER TABLE "user" ALTER COLUMN "divison" SET DATA TYPE VARCHAR(100),
+ALTER COLUMN "district" SET DATA TYPE VARCHAR(100);

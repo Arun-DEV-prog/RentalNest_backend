@@ -3,11 +3,11 @@ model Users {
     name       String     @db.VarChar()
     email      String     @unique
     password   String
-    role       usersRole
+    role       usersRole  @default(tenant)
     phone      String
     status     userStatus @default(active)
-    divison    String     @db.Char()
-    district   String     @db.Char()
+    divison    String     @db.VarChar(100)
+    district   String     @db.VarChar(100)
     created_at DateTime   @default(now())
     updated_at DateTime   @updatedAt
 

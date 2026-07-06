@@ -10,7 +10,7 @@ model Properties {
     availability   Boolean
     available_from DateTime
     address        String   @db.Text
-    division       String   @db.Char
+    division       String   @db.VarChar(100)
     images         String?
 
     userId String
