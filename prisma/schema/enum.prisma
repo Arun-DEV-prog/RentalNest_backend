@@ -1,0 +1,10 @@
+enum usersRole {
+    tenant
+    landlord
+    admin
+}
+
+enum userStatus {
+    active
+    banned
+}

@@ -1,0 +1,17 @@
+model Users {
+    id         String     @id @default(uuid())
+    name       String     @db.VarChar()
+    email      String     @unique
+    password   String
+    role       usersRole
+    phone      String
+    status     userStatus @default(active)
+    divison    String     @db.Char()
+    district   String     @db.Char()
+    created_at DateTime   @default(now())
+    updated_at DateTime   @updatedAt
+
+    properties Properties[]
+
+    @@map("user")
+}
