@@ -3,8 +3,7 @@ import { prisma } from "../../lib/prisma";
 import type { ILoginUser } from "./auth.interface"
 import { jwtUtils } from "../../utils/jwt";
 import config from "../../config";
-import type { SignOptions } from "jsonwebtoken";
-import { ref } from "node:process";
+;
 
 
 

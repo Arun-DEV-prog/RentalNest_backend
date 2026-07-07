@@ -29,6 +29,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 app.use("/api/auth",userRoute)
+app.use("/api/auth", userRoute)
 app.use("/api/auth",authRoute)
 
  export default app;
