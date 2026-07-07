@@ -5,6 +5,7 @@ import config from "./config";
 import { userRoute } from "./modules/users/user.route";
 import cookieParser from "cookie-parser";
 import { authRoute } from "./modules/auth/auth.route";
+import { landlordRoute } from "./modules/landlord/landlord.route";
 
 
 
@@ -31,6 +32,11 @@ app.use(express.urlencoded({extended: true}))
 app.use("/api/auth",userRoute)
 app.use("/api/auth", userRoute)
 app.use("/api/auth",authRoute)
+
+
+//landlord
+
+app.use("/api/landlord",landlordRoute)
 
  export default app;
  

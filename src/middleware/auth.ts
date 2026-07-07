@@ -25,20 +25,21 @@ export const auth=(...requireRoles: usersRole[])=>{
 
 
           const verifyToken= jwtUtils.verifyToken(token, config.jwt_access_secret as string);
-           
+            
 
           if(!verifyToken.success || !verifyToken.data){
              throw new Error("Invalid or expired Token");
           }
 
+          const { email, name, id } = verifyToken.data as JwtPayload;
 
-          const {email, name, id}= verifyToken.data as JwtPayload;
+          if (!id || !email || !name) {
+             throw new Error("Invalid token payload");
+          }
 
           const user = await prisma.users.findUnique({
              where:{
-                 id: String(id),
-                 email: String(email),
-                 name: String(name)
+                 id: String(id)
              }
           })
 
@@ -49,7 +50,7 @@ export const auth=(...requireRoles: usersRole[])=>{
     }
 
     const normalizedRole = String(user.role ?? "").toLowerCase() as usersRole;
-    const normalizedRequiredRoles = requireRoles.map((item) => String(item).toLowerCase()) as Role[];
+    const normalizedRequiredRoles = requireRoles.map((item) => String(item).toLowerCase()) as usersRole[];
 
     if(!normalizedRequiredRoles.includes(normalizedRole)){
       throw new Error("Forbidden")

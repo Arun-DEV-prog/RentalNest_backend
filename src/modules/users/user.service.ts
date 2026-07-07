@@ -2,11 +2,12 @@ import bcrypt from "bcryptjs";
 import { prisma } from "../../lib/prisma";
 import type { RegisterUserPayload } from "./user.interface"
 import config from "../../config";
+import { usersRole } from '../../../generated/prisma/enums';
 
 
 const registerUserIntoDB=async(payload: RegisterUserPayload)=>{
    
-    const {name, email,password, phone,divison,district,  }=payload;
+    const {name, email,password, phone,divison,district,role }=payload;
 
     const isUserExits= await prisma.users.findUnique({
            where:{email}
@@ -23,6 +24,7 @@ const registerUserIntoDB=async(payload: RegisterUserPayload)=>{
            name,
            email,
            password: hashPassword,
+           role,
            phone,
            divison,
            district,

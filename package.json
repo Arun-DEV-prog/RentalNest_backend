@@ -6,6 +6,9 @@
   "author": "arun",
   "type": "module",
   "main": "server.ts",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
