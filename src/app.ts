@@ -3,6 +3,8 @@ import express from "express"
 import cors from "cors"
 import config from "./config";
 import { userRoute } from "./modules/users/user.route";
+import cookieParser from "cookie-parser";
+import { authRoute } from "./modules/auth/auth.route";
 
 
 
@@ -16,6 +18,8 @@ app.use(cors({
      Credential: true
 }))
 
+app.use(cookieParser())
+
  app.get("/", (req:Request, res: Response)=>{
      res.send("server is running")
  })
@@ -25,6 +29,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 app.use("/api/auth",userRoute)
+app.use("/api/auth",authRoute)
 
  export default app;
  
