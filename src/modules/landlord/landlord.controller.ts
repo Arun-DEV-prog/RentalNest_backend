@@ -41,8 +41,27 @@ const updatedProperties=catchAsync(async(req: Request, res:Response, next: NextF
 
 })
 
+const deletedProperties=catchAsync(async(req:Request, res: Response, next: NextFunction)=>{
+       const landLordId= req.users?.id;
+        const propertiesId= req.params?.id;
+        const isOwner= req.users?.role=="landlord";
+
+
+        const data= await landlordService.deletePropertiesByID(landLordId as string,propertiesId as string,isOwner)
+
+    
+       sendResponse(res,{
+           success: true,
+           statusCode: httpStatus.CREATED,
+           message:"Properties deleted successfully",
+           data: null
+       })
+
+})
+
 
 export const landlordController={
      createLandlord,
-     updatedProperties
+     updatedProperties,
+     deletedProperties
 } 

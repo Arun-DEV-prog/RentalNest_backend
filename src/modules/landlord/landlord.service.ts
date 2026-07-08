@@ -55,7 +55,37 @@ const updateProperties=async(landLordId: string, payload:IUpdatedLandlord,proper
        return updateProperties;
 }
 
+const deletePropertiesByID= async(landLordId: string, propertiesId: string,isOwner: boolean)=>{
+      if(!propertiesId){
+           throw new Error("Properties id is not provided")
+      }
+
+      const properties= await prisma.properties.findUnique({
+            where:{
+                id: propertiesId
+            }
+      })
+
+      if(!properties){
+           throw new Error("Properties not Found")
+      }
+
+      if(!isOwner && properties.userId !==landLordId){
+           throw new Error("You are not the Owner")
+      }
+
+      const deletedProperties= await prisma.properties.delete({
+           where:{
+                id:propertiesId
+           }
+      })
+
+
+      return deletedProperties
+}
+
 export const landlordService = {
      createLandlordIntoDB,
-     updateProperties
+     updateProperties,
+     deletePropertiesByID
 }

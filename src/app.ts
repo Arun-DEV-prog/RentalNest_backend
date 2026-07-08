@@ -6,6 +6,7 @@ import { userRoute } from "./modules/users/user.route";
 import cookieParser from "cookie-parser";
 import { authRoute } from "./modules/auth/auth.route";
 import { landlordRoute } from "./modules/landlord/landlord.route";
+import { rentrequestRoute } from "./modules/rentrequest/rentreq.route";
 
 
 
@@ -37,6 +38,10 @@ app.use("/api/auth",authRoute)
 //landlord
 
 app.use("/api/landlord",landlordRoute)
+
+
+//rentRequest
+app.use("/api/rentals",rentrequestRoute)
 
  export default app;
  
