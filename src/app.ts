@@ -8,6 +8,7 @@ import { authRoute } from "./modules/auth/auth.route";
 import { landlordRoute } from "./modules/landlord/landlord.route";
 import { rentrequestRoute } from "./modules/rentrequest/rentreq.route";
 import { propertiesRoute } from "./modules/properties/properties.route";
+import { adminRoute } from "./modules/admin/admin.route";
 
 
 
@@ -37,6 +38,9 @@ app.use("/api/auth",authRoute)
 
 // Properties
 app.use("/api/properties", propertiesRoute)
+
+//Admin
+app.use("/api/admin", adminRoute)
 
 //landlord
 app.use("/api/landlord",landlordRoute)
