@@ -3,7 +3,7 @@ import httpStatus from "http-status"
 
 
 
-export const catchAsync=(fn:RequestHanler)=>{
+export const catchAsync=(fn: (req: Request, res: Response, next: NextFunction) => Promise<unknown> | unknown)=>{
     return async( req: Request, res:Response, next:NextFunction)=>{
         try{
              await fn(req, res, next)

@@ -1,0 +1,95 @@
+import type { NextFunction, Request, Response } from "express";
+import httpStatus from "http-status";
+import { catchAsync } from "../../utils/catchAsync";
+import { sendResponse } from "../../utils/sendResponse";
+import { paymentService } from "./payments.service";
+
+const createPayment = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  const userId = req.users?.id;
+  const { rentalId } = req.body as { rentalId?: string };
+
+  if (!userId) {
+    throw new Error("User is required");
+  }
+
+  if (!rentalId) {
+    throw new Error("Rental ID is required");
+  }
+
+  const result = await paymentService.createPaymentCheckout(userId, rentalId);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Payment checkout created successfully",
+    data: result,
+  });
+});
+
+const confirmPayment = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  const { sessionId } = req.body as { sessionId?: string };
+
+  if (!sessionId) {
+    throw new Error("Session ID is required");
+  }
+
+  const session = await paymentService.verifyPayment(sessionId);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Payment verified successfully",
+    data: {
+      sessionId,
+      status: session.payment_status,
+      paid: session.payment_status === "paid",
+    },
+  });
+});
+
+const getUserPayments = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  const userId = req.users?.id;
+
+  if (!userId) {
+    throw new Error("User is required");
+  }
+
+  const result = await paymentService.getUserPayments(userId, req.query as Record<string, unknown>);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Payments fetched successfully",
+    data: result.data,
+    meta: result.pagination,
+  });
+});
+
+const getPaymentById = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+  const userId = req.users?.id;
+  const paymentId = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
+
+  if (!userId) {
+    throw new Error("User is required");
+  }
+
+  if (!paymentId) {
+    throw new Error("Payment ID is required");
+  }
+
+  const payment = await paymentService.getPaymentById(userId, paymentId);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: "Payment fetched successfully",
+    data: payment,
+  });
+});
+
+export const paymentController = {
+  createPayment,
+  confirmPayment,
+  getUserPayments,
+  getPaymentById,
+};

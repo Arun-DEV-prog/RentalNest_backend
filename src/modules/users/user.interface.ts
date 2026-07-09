@@ -6,7 +6,7 @@ export interface RegisterUserPayload{
     email: string,
     password: string,
     phone: string,
-    
+    role?: usersRole,
     divison: string,
     district: string
 }

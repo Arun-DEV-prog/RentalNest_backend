@@ -24,7 +24,7 @@ const registerUserIntoDB=async(payload: RegisterUserPayload)=>{
            name,
            email,
            password: hashPassword,
-           role,
+           role: role ?? usersRole.tenant,
            phone,
            divison,
            district,

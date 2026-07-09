@@ -5,8 +5,12 @@ import { jwtUtils } from "../../utils/jwt";
 import config from "../../config";
 ;
 
+const normalizeExpiresIn = (value: string | undefined): NonNullable<import("jsonwebtoken").SignOptions["expiresIn"]> => {
+  if (!value) return "1h";
 
-
+  const trimmed = value.trim();
+  return (/^\d+$/.test(trimmed) ? Number(trimmed) : trimmed) as NonNullable<import("jsonwebtoken").SignOptions["expiresIn"]>;
+};
 
 const userlogin=async(payload: ILoginUser)=>{
         const {email,password}=payload;
@@ -37,13 +41,13 @@ const userlogin=async(payload: ILoginUser)=>{
         const accessToken = jwtUtils.createToken(
           jwtPayload,
           config.jwt_access_secret as string,
-          { expiresIn: config.jwt_access_expires_in }
+          { expiresIn: normalizeExpiresIn(config.jwt_access_expires_in) }
        )
 
        const refresToken = jwtUtils.createToken(
           jwtPayload,
           config.jwt_refresh_secret as string,
-          { expiresIn: config.jwt_refresh_expires_in }
+          { expiresIn: normalizeExpiresIn(config.jwt_refresh_expires_in) }
        )
 
        return {
