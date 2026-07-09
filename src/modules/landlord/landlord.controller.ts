@@ -59,9 +59,48 @@ const deletedProperties=catchAsync(async(req:Request, res: Response, next: NextF
 
 })
 
+const getRentalRequests=catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
+    const landLordId = req.users?.id as string;
+
+    const requests = await landlordService.getRentalRequestsForLandlord(landLordId);
+
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: "Rental requests fetched successfully",
+        data: requests
+    })
+})
+
+const approveOrRejectRequest=catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
+    const landLordId = req.users?.id as string;
+    const requestId = req.params?.id as string;
+    const { status } = req.body;
+
+    // Validate status
+    if (!status || !["approved", "rejected"].includes(status)) {
+        throw new Error("Status must be either 'approved' or 'rejected'")
+    }
+
+    const updatedRequest = await landlordService.updateRentalRequestStatus(
+        landLordId,
+        requestId,
+        status as "approved" | "rejected"
+    );
+
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: `Rental request ${status} successfully`,
+        data: updatedRequest
+    })
+})
+
 
 export const landlordController={
      createLandlord,
      updatedProperties,
-     deletedProperties
+     deletedProperties,
+     getRentalRequests,
+     approveOrRejectRequest
 } 

@@ -14,6 +14,7 @@ router.post("/properties", auth(usersRole.landlord), landlordController.createLa
 router.put("/properties/:id",auth(usersRole.landlord), landlordController.updatedProperties)
 router.delete("/properties/:id",auth(usersRole.landlord), landlordController.deletedProperties)
 
-
+router.get("/requests", auth(usersRole.landlord), landlordController.getRentalRequests)
+router.patch("/requests/:id", auth(usersRole.landlord), landlordController.approveOrRejectRequest)
 
 export const landlordRoute=router;

@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import { authRoute } from "./modules/auth/auth.route";
 import { landlordRoute } from "./modules/landlord/landlord.route";
 import { rentrequestRoute } from "./modules/rentrequest/rentreq.route";
+import { propertiesRoute } from "./modules/properties/properties.route";
 
 
 
@@ -34,11 +35,11 @@ app.use("/api/auth",userRoute)
 app.use("/api/auth", userRoute)
 app.use("/api/auth",authRoute)
 
+// Properties
+app.use("/api/properties", propertiesRoute)
 
 //landlord
-
 app.use("/api/landlord",landlordRoute)
-
 
 //rentRequest
 app.use("/api/rentals",rentrequestRoute)
