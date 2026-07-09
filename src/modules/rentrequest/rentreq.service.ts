@@ -90,8 +90,46 @@ const getRentalRqt=async(userId: string,isTentent: boolean)=>{
 
 }
 
+const getRentRqtById=async(userId: string, rentId: string, isOwner: boolean)=>{
+     
+    const userfind = await prisma.users.findUniqueOrThrow({
+        where: {
+            id: userId
+        }
+    })
+
+    if (userfind.role!== "tenant") {
+        throw new Error("You are not permitted to rent!")
+    }
+
+
+
+     if(!rentId){
+         throw new Error("This rentId not found!")
+    }
+
+    const rental= await prisma.rentalrequest.findUniqueOrThrow({
+         where: {
+           id:  rentId,
+         },
+        
+        
+    })
+
+
+   
+
+    return rental;
+   
+
+
+
+}
+
+
 
 export const rentRequestService={
      createRntRequestIntDB,
-     getRentalRqt
+     getRentalRqt,
+     getRentRqtById
 }

@@ -24,9 +24,7 @@ const  createRentRuquest= catchAsync(async(req: Request, res: Response, next: Ne
       
 
 })
-//const  createRentRuquest= catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
 
-//})
 
 
 const getUserRental=catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
@@ -45,8 +43,29 @@ const getUserRental=catchAsync(async(req: Request, res: Response, next: NextFunc
       })
 })
 
+const  getRentRuquestID= catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
+    const userId= req.users?.id;
+    const rentId= req.params?.id;
+    const isTentent= req.users?.role==='tentent';
+
+
+     const data= await rentRequestService.getRentRqtById(userId as string, rentId as string, isTentent as boolean);
+
+
+      sendResponse(res,{
+           success: true,
+           statusCode: httpStatus.CREATED,
+           message:"Successfully get Single rental",
+           data: data
+      })
+
+
+
+})
+
 
 export const rentrequestController={
      createRentRuquest,
-     getUserRental
+     getUserRental,
+     getRentRuquestID
 }

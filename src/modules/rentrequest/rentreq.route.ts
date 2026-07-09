@@ -9,6 +9,8 @@ const router= Router();
 
 router.post("/", auth(usersRole.tenant),rentrequestController.createRentRuquest)
 router.get("/", auth(usersRole.tenant), rentrequestController.getUserRental)
+router.get("/:id", auth(usersRole.tenant), rentrequestController.getRentRuquestID)
+
 
 
 export const rentrequestRoute=router;
