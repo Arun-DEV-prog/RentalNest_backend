@@ -238,13 +238,13 @@ export type PaymentOrderByWithRelationInput = {
 export type PaymentWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
     rentalId?: string;
-    stripePaymentIntentId?: string;
     AND?: Prisma.PaymentWhereInput | Prisma.PaymentWhereInput[];
     OR?: Prisma.PaymentWhereInput[];
     NOT?: Prisma.PaymentWhereInput | Prisma.PaymentWhereInput[];
     userId?: Prisma.StringFilter<"Payment"> | string;
     amount?: Prisma.DecimalFilter<"Payment"> | runtime.Decimal | runtime.DecimalJsLike | number | string;
     currency?: Prisma.StringFilter<"Payment"> | string;
+    stripePaymentIntentId?: Prisma.StringNullableFilter<"Payment"> | string | null;
     status?: Prisma.EnumpaymentStatusFilter<"Payment"> | $Enums.paymentStatus;
     paymentMethod?: Prisma.StringNullableFilter<"Payment"> | string | null;
     transactionId?: Prisma.StringNullableFilter<"Payment"> | string | null;
@@ -252,7 +252,7 @@ export type PaymentWhereUniqueInput = Prisma.AtLeast<{
     updated_at?: Prisma.DateTimeFilter<"Payment"> | Date | string;
     rental?: Prisma.XOR<Prisma.RentalrequestScalarRelationFilter, Prisma.RentalrequestWhereInput>;
     user?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.UsersWhereInput>;
-}, "id" | "rentalId" | "stripePaymentIntentId">;
+}, "id" | "rentalId">;
 export type PaymentOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
     rentalId?: Prisma.SortOrder;

@@ -162,14 +162,14 @@ export interface PrismaClient<in LogOpts extends Prisma.LogLevel = never, in out
         omit: OmitOpts;
     }>;
     /**
-     * `prisma.stripeCustomer`: Exposes CRUD operations for the **StripeCustomer** model.
+     * `prisma.review`: Exposes CRUD operations for the **Review** model.
       * Example usage:
       * ```ts
-      * // Fetch zero or more StripeCustomers
-      * const stripeCustomers = await prisma.stripeCustomer.findMany()
+      * // Fetch zero or more Reviews
+      * const reviews = await prisma.review.findMany()
       * ```
       */
-    get stripeCustomer(): Prisma.StripeCustomerDelegate<ExtArgs, {
+    get review(): Prisma.ReviewDelegate<ExtArgs, {
         omit: OmitOpts;
     }>;
     /**

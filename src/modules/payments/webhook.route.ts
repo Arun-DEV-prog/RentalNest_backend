@@ -7,7 +7,7 @@ import { stripe } from "../../lib/stripe";
 
 const router = Router();
 
-const handleCheckoutSessionCompleted = async (session: Stripe.Checkout.Session) => {
+const handleCheckoutSessionCompleted = async (session: Stripe.Checkout.Session, status: "completed" | "failed" = "completed") => {
   const paymentId = session.metadata?.paymentId;
   const rentalId = session.metadata?.rentalId;
 
@@ -27,18 +27,20 @@ const handleCheckoutSessionCompleted = async (session: Stripe.Checkout.Session) 
     await tx.payment.update({
       where: { id: payment.id },
       data: {
-        status: "completed",
+        status: status === "completed" ? "completed" : "failed",
         transactionId: typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id || session.id,
         paymentMethod: "card",
       },
     });
 
-    await tx.rentalrequest.update({
-      where: { id: rentalId },
-      data: {
-        status: "active_completed",
-      },
-    });
+    if (status === "completed") {
+      await tx.rentalrequest.update({
+        where: { id: rentalId },
+        data: {
+          status: "active_completed",
+        },
+      });
+    }
   });
 };
 
@@ -62,12 +64,18 @@ router.post("/webhook", async (req: Request, res: Response) => {
     switch (event.type) {
       case "checkout.session.completed": {
         const session = event.data.object as Stripe.Checkout.Session;
-        await handleCheckoutSessionCompleted(session);
+        await handleCheckoutSessionCompleted(session, "completed");
+        break;
+      }
+      case "checkout.session.expired":
+      case "checkout.session.async_payment_failed": {
+        const session = event.data.object as Stripe.Checkout.Session;
+        await handleCheckoutSessionCompleted(session, "failed");
         break;
       }
       case "payment_intent.succeeded": {
         const paymentIntent = event.data.object as Stripe.PaymentIntent;
-        const payment = await prisma.payment.findUnique({
+        const payment = await prisma.payment.findFirst({
           where: { stripePaymentIntentId: paymentIntent.id },
         });
 
@@ -85,7 +93,7 @@ router.post("/webhook", async (req: Request, res: Response) => {
       }
       case "payment_intent.payment_failed": {
         const paymentIntent = event.data.object as Stripe.PaymentIntent;
-        const payment = await prisma.payment.findUnique({
+        const payment = await prisma.payment.findFirst({
           where: { stripePaymentIntentId: paymentIntent.id },
         });
 

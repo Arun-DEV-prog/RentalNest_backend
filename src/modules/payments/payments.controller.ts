@@ -27,7 +27,11 @@ const createPayment = catchAsync(async (req: Request, res: Response, next: NextF
 });
 
 const confirmPayment = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-  const { sessionId } = req.body as { sessionId?: string };
+  const bodySessionId = (req.body as { sessionId?: string; session_id?: string })?.sessionId;
+  const bodySessionIdAlt = (req.body as { sessionId?: string; session_id?: string })?.session_id;
+  const querySessionId = typeof req.query?.sessionId === "string" ? req.query.sessionId : undefined;
+  const querySessionIdAlt = typeof req.query?.session_id === "string" ? req.query.session_id : undefined;
+  const sessionId = bodySessionId || bodySessionIdAlt || querySessionId || querySessionIdAlt;
 
   if (!sessionId) {
     throw new Error("Session ID is required");

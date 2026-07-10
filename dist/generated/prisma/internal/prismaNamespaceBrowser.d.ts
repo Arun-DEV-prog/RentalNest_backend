@@ -30,7 +30,7 @@ export declare const ModelName: {
     readonly Payment: "Payment";
     readonly Properties: "Properties";
     readonly Rentalrequest: "Rentalrequest";
-    readonly StripeCustomer: "StripeCustomer";
+    readonly Review: "Review";
     readonly Users: "Users";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -91,14 +91,17 @@ export declare const RentalrequestScalarFieldEnum: {
     readonly updated_at: "updated_at";
 };
 export type RentalrequestScalarFieldEnum = (typeof RentalrequestScalarFieldEnum)[keyof typeof RentalrequestScalarFieldEnum];
-export declare const StripeCustomerScalarFieldEnum: {
+export declare const ReviewScalarFieldEnum: {
     readonly id: "id";
+    readonly rentalId: "rentalId";
     readonly userId: "userId";
-    readonly stripeCustomerId: "stripeCustomerId";
+    readonly propertyId: "propertyId";
+    readonly rating: "rating";
+    readonly comment: "comment";
     readonly created_at: "created_at";
     readonly updated_at: "updated_at";
 };
-export type StripeCustomerScalarFieldEnum = (typeof StripeCustomerScalarFieldEnum)[keyof typeof StripeCustomerScalarFieldEnum];
+export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum];
 export declare const UsersScalarFieldEnum: {
     readonly id: "id";
     readonly name: "name";

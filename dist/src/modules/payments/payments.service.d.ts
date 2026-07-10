@@ -50,9 +50,9 @@ declare const getUserPayments: (userId: string, filters?: Record<string, unknown
         updated_at: Date;
         userId: string;
         rentalId: string;
-        stripePaymentIntentId: string | null;
         amount: import("@prisma/client-runtime-utils").Decimal;
         currency: string;
+        stripePaymentIntentId: string | null;
         paymentMethod: string | null;
         transactionId: string | null;
     })[];
@@ -106,9 +106,9 @@ declare const getPaymentById: (userId: string, paymentId: string) => Promise<{
     updated_at: Date;
     userId: string;
     rentalId: string;
-    stripePaymentIntentId: string | null;
     amount: import("@prisma/client-runtime-utils").Decimal;
     currency: string;
+    stripePaymentIntentId: string | null;
     paymentMethod: string | null;
     transactionId: string | null;
 }>;

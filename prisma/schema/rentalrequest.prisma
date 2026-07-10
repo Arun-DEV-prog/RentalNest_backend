@@ -9,6 +9,8 @@ model Rentalrequest {
     updated_at     DateTime     @updatedAt
     properties     Properties   @relation(fields: [properties_id], references: [id], onDelete: Cascade)
     user           Users        @relation(fields: [userId], references: [id])
+    reviews        Review[]
+    payment        Payment?
 
     @@map("rentalrequest")
 }

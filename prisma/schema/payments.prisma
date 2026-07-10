@@ -1,0 +1,26 @@
+enum paymentStatus {
+    pending
+    processing
+    completed
+    failed
+    cancelled
+}
+
+model Payment {
+    id                    String        @id @default(uuid())
+    rentalId              String        @unique
+    userId                String
+    amount                Decimal
+    currency              String        @default("usd")
+    stripePaymentIntentId String?
+    status                paymentStatus @default(pending)
+    paymentMethod         String?
+    transactionId         String?
+    created_at            DateTime      @default(now())
+    updated_at            DateTime      @updatedAt
+
+    rental Rentalrequest @relation(fields: [rentalId], references: [id], onDelete: Cascade)
+    user   Users         @relation(fields: [userId], references: [id])
+
+    @@map("payments")
+}

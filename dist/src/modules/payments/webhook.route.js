@@ -55,7 +55,7 @@ router.post("/webhook", async (req, res) => {
             }
             case "payment_intent.succeeded": {
                 const paymentIntent = event.data.object;
-                const payment = await prisma.payment.findUnique({
+                const payment = await prisma.payment.findFirst({
                     where: { stripePaymentIntentId: paymentIntent.id },
                 });
                 if (payment) {
@@ -72,7 +72,7 @@ router.post("/webhook", async (req, res) => {
             }
             case "payment_intent.payment_failed": {
                 const paymentIntent = event.data.object;
-                const payment = await prisma.payment.findUnique({
+                const payment = await prisma.payment.findFirst({
                     where: { stripePaymentIntentId: paymentIntent.id },
                 });
                 if (payment) {

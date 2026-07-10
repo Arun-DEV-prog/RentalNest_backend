@@ -72,7 +72,7 @@ export const ModelName = {
     Payment: 'Payment',
     Properties: 'Properties',
     Rentalrequest: 'Rentalrequest',
-    StripeCustomer: 'StripeCustomer',
+    Review: 'Review',
     Users: 'Users'
 };
 /**
@@ -130,10 +130,13 @@ export const RentalrequestScalarFieldEnum = {
     created_at: 'created_at',
     updated_at: 'updated_at'
 };
-export const StripeCustomerScalarFieldEnum = {
+export const ReviewScalarFieldEnum = {
     id: 'id',
+    rentalId: 'rentalId',
     userId: 'userId',
-    stripeCustomerId: 'stripeCustomerId',
+    propertyId: 'propertyId',
+    rating: 'rating',
+    comment: 'comment',
     created_at: 'created_at',
     updated_at: 'updated_at'
 };

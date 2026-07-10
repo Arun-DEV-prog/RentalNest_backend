@@ -235,7 +235,7 @@ export declare const ModelName: {
     readonly Payment: "Payment";
     readonly Properties: "Properties";
     readonly Rentalrequest: "Rentalrequest";
-    readonly StripeCustomer: "StripeCustomer";
+    readonly Review: "Review";
     readonly Users: "Users";
 };
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -249,7 +249,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         omit: GlobalOmitOptions;
     };
     meta: {
-        modelProps: "category" | "payment" | "properties" | "rentalrequest" | "stripeCustomer" | "users";
+        modelProps: "category" | "payment" | "properties" | "rentalrequest" | "review" | "users";
         txIsolationLevel: TransactionIsolationLevel;
     };
     model: {
@@ -549,77 +549,77 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
                 };
             };
         };
-        StripeCustomer: {
-            payload: Prisma.$StripeCustomerPayload<ExtArgs>;
-            fields: Prisma.StripeCustomerFieldRefs;
+        Review: {
+            payload: Prisma.$ReviewPayload<ExtArgs>;
+            fields: Prisma.ReviewFieldRefs;
             operations: {
                 findUnique: {
-                    args: Prisma.StripeCustomerFindUniqueArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload> | null;
+                    args: Prisma.ReviewFindUniqueArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload> | null;
                 };
                 findUniqueOrThrow: {
-                    args: Prisma.StripeCustomerFindUniqueOrThrowArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>;
+                    args: Prisma.ReviewFindUniqueOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>;
                 };
                 findFirst: {
-                    args: Prisma.StripeCustomerFindFirstArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload> | null;
+                    args: Prisma.ReviewFindFirstArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload> | null;
                 };
                 findFirstOrThrow: {
-                    args: Prisma.StripeCustomerFindFirstOrThrowArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>;
+                    args: Prisma.ReviewFindFirstOrThrowArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>;
                 };
                 findMany: {
-                    args: Prisma.StripeCustomerFindManyArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>[];
+                    args: Prisma.ReviewFindManyArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>[];
                 };
                 create: {
-                    args: Prisma.StripeCustomerCreateArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>;
+                    args: Prisma.ReviewCreateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>;
                 };
                 createMany: {
-                    args: Prisma.StripeCustomerCreateManyArgs<ExtArgs>;
+                    args: Prisma.ReviewCreateManyArgs<ExtArgs>;
                     result: BatchPayload;
                 };
                 createManyAndReturn: {
-                    args: Prisma.StripeCustomerCreateManyAndReturnArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>[];
+                    args: Prisma.ReviewCreateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>[];
                 };
                 delete: {
-                    args: Prisma.StripeCustomerDeleteArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>;
+                    args: Prisma.ReviewDeleteArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>;
                 };
                 update: {
-                    args: Prisma.StripeCustomerUpdateArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>;
+                    args: Prisma.ReviewUpdateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>;
                 };
                 deleteMany: {
-                    args: Prisma.StripeCustomerDeleteManyArgs<ExtArgs>;
+                    args: Prisma.ReviewDeleteManyArgs<ExtArgs>;
                     result: BatchPayload;
                 };
                 updateMany: {
-                    args: Prisma.StripeCustomerUpdateManyArgs<ExtArgs>;
+                    args: Prisma.ReviewUpdateManyArgs<ExtArgs>;
                     result: BatchPayload;
                 };
                 updateManyAndReturn: {
-                    args: Prisma.StripeCustomerUpdateManyAndReturnArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>[];
+                    args: Prisma.ReviewUpdateManyAndReturnArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>[];
                 };
                 upsert: {
-                    args: Prisma.StripeCustomerUpsertArgs<ExtArgs>;
-                    result: runtime.Types.Utils.PayloadToResult<Prisma.$StripeCustomerPayload>;
+                    args: Prisma.ReviewUpsertArgs<ExtArgs>;
+                    result: runtime.Types.Utils.PayloadToResult<Prisma.$ReviewPayload>;
                 };
                 aggregate: {
-                    args: Prisma.StripeCustomerAggregateArgs<ExtArgs>;
-                    result: runtime.Types.Utils.Optional<Prisma.AggregateStripeCustomer>;
+                    args: Prisma.ReviewAggregateArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.AggregateReview>;
                 };
                 groupBy: {
-                    args: Prisma.StripeCustomerGroupByArgs<ExtArgs>;
-                    result: runtime.Types.Utils.Optional<Prisma.StripeCustomerGroupByOutputType>[];
+                    args: Prisma.ReviewGroupByArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.ReviewGroupByOutputType>[];
                 };
                 count: {
-                    args: Prisma.StripeCustomerCountArgs<ExtArgs>;
-                    result: runtime.Types.Utils.Optional<Prisma.StripeCustomerCountAggregateOutputType> | number;
+                    args: Prisma.ReviewCountArgs<ExtArgs>;
+                    result: runtime.Types.Utils.Optional<Prisma.ReviewCountAggregateOutputType> | number;
                 };
             };
         };
@@ -781,14 +781,17 @@ export declare const RentalrequestScalarFieldEnum: {
     readonly updated_at: "updated_at";
 };
 export type RentalrequestScalarFieldEnum = (typeof RentalrequestScalarFieldEnum)[keyof typeof RentalrequestScalarFieldEnum];
-export declare const StripeCustomerScalarFieldEnum: {
+export declare const ReviewScalarFieldEnum: {
     readonly id: "id";
+    readonly rentalId: "rentalId";
     readonly userId: "userId";
-    readonly stripeCustomerId: "stripeCustomerId";
+    readonly propertyId: "propertyId";
+    readonly rating: "rating";
+    readonly comment: "comment";
     readonly created_at: "created_at";
     readonly updated_at: "updated_at";
 };
-export type StripeCustomerScalarFieldEnum = (typeof StripeCustomerScalarFieldEnum)[keyof typeof StripeCustomerScalarFieldEnum];
+export type ReviewScalarFieldEnum = (typeof ReviewScalarFieldEnum)[keyof typeof ReviewScalarFieldEnum];
 export declare const UsersScalarFieldEnum: {
     readonly id: "id";
     readonly name: "name";
@@ -1010,7 +1013,7 @@ export type GlobalOmitConfig = {
     payment?: Prisma.PaymentOmit;
     properties?: Prisma.PropertiesOmit;
     rentalrequest?: Prisma.RentalrequestOmit;
-    stripeCustomer?: Prisma.StripeCustomerOmit;
+    review?: Prisma.ReviewOmit;
     users?: Prisma.UsersOmit;
 };
 export type LogLevel = 'info' | 'query' | 'warn' | 'error';

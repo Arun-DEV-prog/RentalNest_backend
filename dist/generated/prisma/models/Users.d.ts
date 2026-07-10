@@ -189,8 +189,8 @@ export type UsersWhereInput = {
     updated_at?: Prisma.DateTimeFilter<"Users"> | Date | string;
     properties?: Prisma.PropertiesListRelationFilter;
     rental?: Prisma.RentalrequestListRelationFilter;
+    reviews?: Prisma.ReviewListRelationFilter;
     payments?: Prisma.PaymentListRelationFilter;
-    stripeCustomer?: Prisma.XOR<Prisma.StripeCustomerNullableScalarRelationFilter, Prisma.StripeCustomerWhereInput> | null;
 };
 export type UsersOrderByWithRelationInput = {
     id?: Prisma.SortOrder;
@@ -206,8 +206,8 @@ export type UsersOrderByWithRelationInput = {
     updated_at?: Prisma.SortOrder;
     properties?: Prisma.PropertiesOrderByRelationAggregateInput;
     rental?: Prisma.RentalrequestOrderByRelationAggregateInput;
+    reviews?: Prisma.ReviewOrderByRelationAggregateInput;
     payments?: Prisma.PaymentOrderByRelationAggregateInput;
-    stripeCustomer?: Prisma.StripeCustomerOrderByWithRelationInput;
 };
 export type UsersWhereUniqueInput = Prisma.AtLeast<{
     id?: string;
@@ -226,8 +226,8 @@ export type UsersWhereUniqueInput = Prisma.AtLeast<{
     updated_at?: Prisma.DateTimeFilter<"Users"> | Date | string;
     properties?: Prisma.PropertiesListRelationFilter;
     rental?: Prisma.RentalrequestListRelationFilter;
+    reviews?: Prisma.ReviewListRelationFilter;
     payments?: Prisma.PaymentListRelationFilter;
-    stripeCustomer?: Prisma.XOR<Prisma.StripeCustomerNullableScalarRelationFilter, Prisma.StripeCustomerWhereInput> | null;
 }, "id" | "email">;
 export type UsersOrderByWithAggregationInput = {
     id?: Prisma.SortOrder;
@@ -275,8 +275,8 @@ export type UsersCreateInput = {
     updated_at?: Date | string;
     properties?: Prisma.PropertiesCreateNestedManyWithoutUserInput;
     rental?: Prisma.RentalrequestCreateNestedManyWithoutUserInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerCreateNestedOneWithoutUserInput;
 };
 export type UsersUncheckedCreateInput = {
     id?: string;
@@ -292,8 +292,8 @@ export type UsersUncheckedCreateInput = {
     updated_at?: Date | string;
     properties?: Prisma.PropertiesUncheckedCreateNestedManyWithoutUserInput;
     rental?: Prisma.RentalrequestUncheckedCreateNestedManyWithoutUserInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedCreateNestedOneWithoutUserInput;
 };
 export type UsersUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -309,8 +309,8 @@ export type UsersUpdateInput = {
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     properties?: Prisma.PropertiesUpdateManyWithoutUserNestedInput;
     rental?: Prisma.RentalrequestUpdateManyWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
     payments?: Prisma.PaymentUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUpdateOneWithoutUserNestedInput;
 };
 export type UsersUncheckedUpdateInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -326,8 +326,8 @@ export type UsersUncheckedUpdateInput = {
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     properties?: Prisma.PropertiesUncheckedUpdateManyWithoutUserNestedInput;
     rental?: Prisma.RentalrequestUncheckedUpdateManyWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
     payments?: Prisma.PaymentUncheckedUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedUpdateOneWithoutUserNestedInput;
 };
 export type UsersCreateManyInput = {
     id?: string;
@@ -447,17 +447,17 @@ export type UsersUpdateOneRequiredWithoutRentalNestedInput = {
     connect?: Prisma.UsersWhereUniqueInput;
     update?: Prisma.XOR<Prisma.XOR<Prisma.UsersUpdateToOneWithWhereWithoutRentalInput, Prisma.UsersUpdateWithoutRentalInput>, Prisma.UsersUncheckedUpdateWithoutRentalInput>;
 };
-export type UsersCreateNestedOneWithoutStripeCustomerInput = {
-    create?: Prisma.XOR<Prisma.UsersCreateWithoutStripeCustomerInput, Prisma.UsersUncheckedCreateWithoutStripeCustomerInput>;
-    connectOrCreate?: Prisma.UsersCreateOrConnectWithoutStripeCustomerInput;
+export type UsersCreateNestedOneWithoutReviewsInput = {
+    create?: Prisma.XOR<Prisma.UsersCreateWithoutReviewsInput, Prisma.UsersUncheckedCreateWithoutReviewsInput>;
+    connectOrCreate?: Prisma.UsersCreateOrConnectWithoutReviewsInput;
     connect?: Prisma.UsersWhereUniqueInput;
 };
-export type UsersUpdateOneRequiredWithoutStripeCustomerNestedInput = {
-    create?: Prisma.XOR<Prisma.UsersCreateWithoutStripeCustomerInput, Prisma.UsersUncheckedCreateWithoutStripeCustomerInput>;
-    connectOrCreate?: Prisma.UsersCreateOrConnectWithoutStripeCustomerInput;
-    upsert?: Prisma.UsersUpsertWithoutStripeCustomerInput;
+export type UsersUpdateOneRequiredWithoutReviewsNestedInput = {
+    create?: Prisma.XOR<Prisma.UsersCreateWithoutReviewsInput, Prisma.UsersUncheckedCreateWithoutReviewsInput>;
+    connectOrCreate?: Prisma.UsersCreateOrConnectWithoutReviewsInput;
+    upsert?: Prisma.UsersUpsertWithoutReviewsInput;
     connect?: Prisma.UsersWhereUniqueInput;
-    update?: Prisma.XOR<Prisma.XOR<Prisma.UsersUpdateToOneWithWhereWithoutStripeCustomerInput, Prisma.UsersUpdateWithoutStripeCustomerInput>, Prisma.UsersUncheckedUpdateWithoutStripeCustomerInput>;
+    update?: Prisma.XOR<Prisma.XOR<Prisma.UsersUpdateToOneWithWhereWithoutReviewsInput, Prisma.UsersUpdateWithoutReviewsInput>, Prisma.UsersUncheckedUpdateWithoutReviewsInput>;
 };
 export type EnumusersRoleFieldUpdateOperationsInput = {
     set?: $Enums.usersRole;
@@ -479,7 +479,7 @@ export type UsersCreateWithoutPaymentsInput = {
     updated_at?: Date | string;
     properties?: Prisma.PropertiesCreateNestedManyWithoutUserInput;
     rental?: Prisma.RentalrequestCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerCreateNestedOneWithoutUserInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
 };
 export type UsersUncheckedCreateWithoutPaymentsInput = {
     id?: string;
@@ -495,7 +495,7 @@ export type UsersUncheckedCreateWithoutPaymentsInput = {
     updated_at?: Date | string;
     properties?: Prisma.PropertiesUncheckedCreateNestedManyWithoutUserInput;
     rental?: Prisma.RentalrequestUncheckedCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedCreateNestedOneWithoutUserInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
 };
 export type UsersCreateOrConnectWithoutPaymentsInput = {
     where: Prisma.UsersWhereUniqueInput;
@@ -524,7 +524,7 @@ export type UsersUpdateWithoutPaymentsInput = {
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     properties?: Prisma.PropertiesUpdateManyWithoutUserNestedInput;
     rental?: Prisma.RentalrequestUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUpdateOneWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
 };
 export type UsersUncheckedUpdateWithoutPaymentsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -540,7 +540,7 @@ export type UsersUncheckedUpdateWithoutPaymentsInput = {
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     properties?: Prisma.PropertiesUncheckedUpdateManyWithoutUserNestedInput;
     rental?: Prisma.RentalrequestUncheckedUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedUpdateOneWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
 };
 export type UsersCreateWithoutPropertiesInput = {
     id?: string;
@@ -555,8 +555,8 @@ export type UsersCreateWithoutPropertiesInput = {
     created_at?: Date | string;
     updated_at?: Date | string;
     rental?: Prisma.RentalrequestCreateNestedManyWithoutUserInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerCreateNestedOneWithoutUserInput;
 };
 export type UsersUncheckedCreateWithoutPropertiesInput = {
     id?: string;
@@ -571,8 +571,8 @@ export type UsersUncheckedCreateWithoutPropertiesInput = {
     created_at?: Date | string;
     updated_at?: Date | string;
     rental?: Prisma.RentalrequestUncheckedCreateNestedManyWithoutUserInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedCreateNestedOneWithoutUserInput;
 };
 export type UsersCreateOrConnectWithoutPropertiesInput = {
     where: Prisma.UsersWhereUniqueInput;
@@ -600,8 +600,8 @@ export type UsersUpdateWithoutPropertiesInput = {
     created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     rental?: Prisma.RentalrequestUpdateManyWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
     payments?: Prisma.PaymentUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUpdateOneWithoutUserNestedInput;
 };
 export type UsersUncheckedUpdateWithoutPropertiesInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -616,8 +616,8 @@ export type UsersUncheckedUpdateWithoutPropertiesInput = {
     created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     rental?: Prisma.RentalrequestUncheckedUpdateManyWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
     payments?: Prisma.PaymentUncheckedUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedUpdateOneWithoutUserNestedInput;
 };
 export type UsersCreateWithoutRentalInput = {
     id?: string;
@@ -632,8 +632,8 @@ export type UsersCreateWithoutRentalInput = {
     created_at?: Date | string;
     updated_at?: Date | string;
     properties?: Prisma.PropertiesCreateNestedManyWithoutUserInput;
+    reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerCreateNestedOneWithoutUserInput;
 };
 export type UsersUncheckedCreateWithoutRentalInput = {
     id?: string;
@@ -648,8 +648,8 @@ export type UsersUncheckedCreateWithoutRentalInput = {
     created_at?: Date | string;
     updated_at?: Date | string;
     properties?: Prisma.PropertiesUncheckedCreateNestedManyWithoutUserInput;
+    reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutUserInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedCreateNestedOneWithoutUserInput;
 };
 export type UsersCreateOrConnectWithoutRentalInput = {
     where: Prisma.UsersWhereUniqueInput;
@@ -677,8 +677,8 @@ export type UsersUpdateWithoutRentalInput = {
     created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     properties?: Prisma.PropertiesUpdateManyWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput;
     payments?: Prisma.PaymentUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUpdateOneWithoutUserNestedInput;
 };
 export type UsersUncheckedUpdateWithoutRentalInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -693,10 +693,10 @@ export type UsersUncheckedUpdateWithoutRentalInput = {
     created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     properties?: Prisma.PropertiesUncheckedUpdateManyWithoutUserNestedInput;
+    reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput;
     payments?: Prisma.PaymentUncheckedUpdateManyWithoutUserNestedInput;
-    stripeCustomer?: Prisma.StripeCustomerUncheckedUpdateOneWithoutUserNestedInput;
 };
-export type UsersCreateWithoutStripeCustomerInput = {
+export type UsersCreateWithoutReviewsInput = {
     id?: string;
     name: string;
     email: string;
@@ -712,7 +712,7 @@ export type UsersCreateWithoutStripeCustomerInput = {
     rental?: Prisma.RentalrequestCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentCreateNestedManyWithoutUserInput;
 };
-export type UsersUncheckedCreateWithoutStripeCustomerInput = {
+export type UsersUncheckedCreateWithoutReviewsInput = {
     id?: string;
     name: string;
     email: string;
@@ -728,20 +728,20 @@ export type UsersUncheckedCreateWithoutStripeCustomerInput = {
     rental?: Prisma.RentalrequestUncheckedCreateNestedManyWithoutUserInput;
     payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutUserInput;
 };
-export type UsersCreateOrConnectWithoutStripeCustomerInput = {
+export type UsersCreateOrConnectWithoutReviewsInput = {
     where: Prisma.UsersWhereUniqueInput;
-    create: Prisma.XOR<Prisma.UsersCreateWithoutStripeCustomerInput, Prisma.UsersUncheckedCreateWithoutStripeCustomerInput>;
+    create: Prisma.XOR<Prisma.UsersCreateWithoutReviewsInput, Prisma.UsersUncheckedCreateWithoutReviewsInput>;
 };
-export type UsersUpsertWithoutStripeCustomerInput = {
-    update: Prisma.XOR<Prisma.UsersUpdateWithoutStripeCustomerInput, Prisma.UsersUncheckedUpdateWithoutStripeCustomerInput>;
-    create: Prisma.XOR<Prisma.UsersCreateWithoutStripeCustomerInput, Prisma.UsersUncheckedCreateWithoutStripeCustomerInput>;
+export type UsersUpsertWithoutReviewsInput = {
+    update: Prisma.XOR<Prisma.UsersUpdateWithoutReviewsInput, Prisma.UsersUncheckedUpdateWithoutReviewsInput>;
+    create: Prisma.XOR<Prisma.UsersCreateWithoutReviewsInput, Prisma.UsersUncheckedCreateWithoutReviewsInput>;
     where?: Prisma.UsersWhereInput;
 };
-export type UsersUpdateToOneWithWhereWithoutStripeCustomerInput = {
+export type UsersUpdateToOneWithWhereWithoutReviewsInput = {
     where?: Prisma.UsersWhereInput;
-    data: Prisma.XOR<Prisma.UsersUpdateWithoutStripeCustomerInput, Prisma.UsersUncheckedUpdateWithoutStripeCustomerInput>;
+    data: Prisma.XOR<Prisma.UsersUpdateWithoutReviewsInput, Prisma.UsersUncheckedUpdateWithoutReviewsInput>;
 };
-export type UsersUpdateWithoutStripeCustomerInput = {
+export type UsersUpdateWithoutReviewsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     email?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -757,7 +757,7 @@ export type UsersUpdateWithoutStripeCustomerInput = {
     rental?: Prisma.RentalrequestUpdateManyWithoutUserNestedInput;
     payments?: Prisma.PaymentUpdateManyWithoutUserNestedInput;
 };
-export type UsersUncheckedUpdateWithoutStripeCustomerInput = {
+export type UsersUncheckedUpdateWithoutReviewsInput = {
     id?: Prisma.StringFieldUpdateOperationsInput | string;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     email?: Prisma.StringFieldUpdateOperationsInput | string;
@@ -779,11 +779,13 @@ export type UsersUncheckedUpdateWithoutStripeCustomerInput = {
 export type UsersCountOutputType = {
     properties: number;
     rental: number;
+    reviews: number;
     payments: number;
 };
 export type UsersCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     properties?: boolean | UsersCountOutputTypeCountPropertiesArgs;
     rental?: boolean | UsersCountOutputTypeCountRentalArgs;
+    reviews?: boolean | UsersCountOutputTypeCountReviewsArgs;
     payments?: boolean | UsersCountOutputTypeCountPaymentsArgs;
 };
 /**
@@ -810,6 +812,12 @@ export type UsersCountOutputTypeCountRentalArgs<ExtArgs extends runtime.Types.Ex
 /**
  * UsersCountOutputType without action
  */
+export type UsersCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    where?: Prisma.ReviewWhereInput;
+};
+/**
+ * UsersCountOutputType without action
+ */
 export type UsersCountOutputTypeCountPaymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     where?: Prisma.PaymentWhereInput;
 };
@@ -827,8 +835,8 @@ export type UsersSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
     updated_at?: boolean;
     properties?: boolean | Prisma.Users$propertiesArgs<ExtArgs>;
     rental?: boolean | Prisma.Users$rentalArgs<ExtArgs>;
+    reviews?: boolean | Prisma.Users$reviewsArgs<ExtArgs>;
     payments?: boolean | Prisma.Users$paymentsArgs<ExtArgs>;
-    stripeCustomer?: boolean | Prisma.Users$stripeCustomerArgs<ExtArgs>;
     _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>;
 }, ExtArgs["result"]["users"]>;
 export type UsersSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -874,8 +882,8 @@ export type UsersOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = ru
 export type UsersInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
     properties?: boolean | Prisma.Users$propertiesArgs<ExtArgs>;
     rental?: boolean | Prisma.Users$rentalArgs<ExtArgs>;
+    reviews?: boolean | Prisma.Users$reviewsArgs<ExtArgs>;
     payments?: boolean | Prisma.Users$paymentsArgs<ExtArgs>;
-    stripeCustomer?: boolean | Prisma.Users$stripeCustomerArgs<ExtArgs>;
     _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>;
 };
 export type UsersIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
@@ -885,8 +893,8 @@ export type $UsersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     objects: {
         properties: Prisma.$PropertiesPayload<ExtArgs>[];
         rental: Prisma.$RentalrequestPayload<ExtArgs>[];
+        reviews: Prisma.$ReviewPayload<ExtArgs>[];
         payments: Prisma.$PaymentPayload<ExtArgs>[];
-        stripeCustomer: Prisma.$StripeCustomerPayload<ExtArgs> | null;
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<{
         id: string;
@@ -1231,8 +1239,8 @@ export interface Prisma__UsersClient<T, Null = never, ExtArgs extends runtime.Ty
     readonly [Symbol.toStringTag]: "PrismaPromise";
     properties<T extends Prisma.Users$propertiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Users$propertiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PropertiesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     rental<T extends Prisma.Users$rentalArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Users$rentalArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RentalrequestPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
+    reviews<T extends Prisma.Users$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Users$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
     payments<T extends Prisma.Users$paymentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Users$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>;
-    stripeCustomer<T extends Prisma.Users$stripeCustomerArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Users$stripeCustomerArgs<ExtArgs>>): Prisma.Prisma__StripeCustomerClient<runtime.Types.Result.GetResult<Prisma.$StripeCustomerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>;
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1691,6 +1699,29 @@ export type Users$rentalArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
     distinct?: Prisma.RentalrequestScalarFieldEnum | Prisma.RentalrequestScalarFieldEnum[];
 };
 /**
+ * Users.reviews
+ */
+export type Users$reviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Review
+     */
+    select?: Prisma.ReviewSelect<ExtArgs> | null;
+    /**
+     * Omit specific fields from the Review
+     */
+    omit?: Prisma.ReviewOmit<ExtArgs> | null;
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Prisma.ReviewInclude<ExtArgs> | null;
+    where?: Prisma.ReviewWhereInput;
+    orderBy?: Prisma.ReviewOrderByWithRelationInput | Prisma.ReviewOrderByWithRelationInput[];
+    cursor?: Prisma.ReviewWhereUniqueInput;
+    take?: number;
+    skip?: number;
+    distinct?: Prisma.ReviewScalarFieldEnum | Prisma.ReviewScalarFieldEnum[];
+};
+/**
  * Users.payments
  */
 export type Users$paymentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1712,24 +1743,6 @@ export type Users$paymentsArgs<ExtArgs extends runtime.Types.Extensions.Internal
     take?: number;
     skip?: number;
     distinct?: Prisma.PaymentScalarFieldEnum | Prisma.PaymentScalarFieldEnum[];
-};
-/**
- * Users.stripeCustomer
- */
-export type Users$stripeCustomerArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the StripeCustomer
-     */
-    select?: Prisma.StripeCustomerSelect<ExtArgs> | null;
-    /**
-     * Omit specific fields from the StripeCustomer
-     */
-    omit?: Prisma.StripeCustomerOmit<ExtArgs> | null;
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: Prisma.StripeCustomerInclude<ExtArgs> | null;
-    where?: Prisma.StripeCustomerWhereInput;
 };
 /**
  * Users without action

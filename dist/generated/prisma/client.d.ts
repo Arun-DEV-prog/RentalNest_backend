@@ -42,10 +42,10 @@ export type Properties = Prisma.PropertiesModel;
  */
 export type Rentalrequest = Prisma.RentalrequestModel;
 /**
- * Model StripeCustomer
+ * Model Review
  *
  */
-export type StripeCustomer = Prisma.StripeCustomerModel;
+export type Review = Prisma.ReviewModel;
 /**
  * Model Users
  *

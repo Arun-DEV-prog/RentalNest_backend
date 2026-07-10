@@ -10,6 +10,7 @@ import { propertiesRoute } from "./modules/properties/properties.route";
 import { adminRoute } from "./modules/admin/admin.route";
 import { paymentRoute } from "./modules/payments/payments.route";
 import { webhookRoute } from "./modules/payments/webhook.route";
+import { reviewRoute } from "./modules/reviews/reviews.route";
 const app = express();
 app.use(cors({
     origin: config.app_url,
@@ -42,5 +43,7 @@ app.use("/api/landlord", landlordRoute);
 app.use("/api/rentals", rentrequestRoute);
 // Payments
 app.use("/api/payments", paymentRoute);
+// Reviews
+app.use("/api/reviews", reviewRoute);
 export default app;
 //# sourceMappingURL=app.js.map

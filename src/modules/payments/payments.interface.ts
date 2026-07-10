@@ -3,7 +3,8 @@ export interface ICreatePaymentRequest {
 }
 
 export interface IConfirmPaymentRequest {
-  sessionId: string;
+  sessionId?: string;
+  session_id?: string;
 }
 
 export interface IPaymentFilter {

@@ -19,6 +19,7 @@ model Properties {
     categories   Category @relation(fields: [categoriesId], references: [id])
 
     rentalrequests Rentalrequest[]
+    reviews        Review[]
 
     propertiesId String?
 
