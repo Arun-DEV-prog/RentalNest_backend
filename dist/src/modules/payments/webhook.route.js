@@ -4,7 +4,7 @@ import config from "../../config";
 import { prisma } from "../../lib/prisma";
 import { stripe } from "../../lib/stripe";
 const router = Router();
-const handleCheckoutSessionCompleted = async (session) => {
+const handleCheckoutSessionCompleted = async (session, status = "completed") => {
     const paymentId = session.metadata?.paymentId;
     const rentalId = session.metadata?.rentalId;
     if (!paymentId || !rentalId) {
@@ -20,17 +20,19 @@ const handleCheckoutSessionCompleted = async (session) => {
         await tx.payment.update({
             where: { id: payment.id },
             data: {
-                status: "completed",
+                status: status === "completed" ? "completed" : "failed",
                 transactionId: typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id || session.id,
                 paymentMethod: "card",
             },
         });
-        await tx.rentalrequest.update({
-            where: { id: rentalId },
-            data: {
-                status: "active_completed",
-            },
-        });
+        if (status === "completed") {
+            await tx.rentalrequest.update({
+                where: { id: rentalId },
+                data: {
+                    status: "active_completed",
+                },
+            });
+        }
     });
 };
 router.post("/webhook", async (req, res) => {
@@ -50,7 +52,13 @@ router.post("/webhook", async (req, res) => {
         switch (event.type) {
             case "checkout.session.completed": {
                 const session = event.data.object;
-                await handleCheckoutSessionCompleted(session);
+                await handleCheckoutSessionCompleted(session, "completed");
+                break;
+            }
+            case "checkout.session.expired":
+            case "checkout.session.async_payment_failed": {
+                const session = event.data.object;
+                await handleCheckoutSessionCompleted(session, "failed");
                 break;
             }
             case "payment_intent.succeeded": {

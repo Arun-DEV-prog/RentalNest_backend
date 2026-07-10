@@ -1,10 +1,10 @@
 import httpStatus from 'http-status';
-export const golbalErrorHandler = ((err, req, res, next) => {
-    res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+export const globalErrorHandler = (err, req, res, next) => {
+    res.status(err.statusCode || httpStatus.INTERNAL_SERVER_ERROR).json({
         success: false,
-        statusCode: httpStatus.INTERNAL_SERVER_ERROR,
-        message: err.message,
-        error: err.stack
+        statusCode: err.statusCode || httpStatus.INTERNAL_SERVER_ERROR,
+        message: err.message || "Something went wrong",
+        error: err.stack || err,
     });
-});
+};
 //# sourceMappingURL=globalErrorhandler.js.map

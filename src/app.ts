@@ -1,4 +1,4 @@
-import type { Application, Request, Response } from "express";
+import type { Application, NextFunction, Request, Response } from "express";
 import express from "express"
 import cors from "cors"
 import config from "./config";
@@ -13,6 +13,7 @@ import { paymentRoute } from "./modules/payments/payments.route";
 import { webhookRoute } from "./modules/payments/webhook.route";
 import { reviewRoute } from "./modules/reviews/reviews.route";
 import { paymentService } from "./modules/payments/payments.service";
+import { globalErrorHandler } from "./middleware/globalErrorhandler";
 
 
 
@@ -37,6 +38,7 @@ app.use("/api/payments", webhookRoute);
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+
 
 app.get("/payment/success", async (req: Request, res: Response) => {
     const sessionId = typeof req.query.session_id === "string"
@@ -93,6 +95,14 @@ app.use("/api/payments", paymentRoute)
 
 // Reviews
 app.use("/api/reviews", reviewRoute)
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+    const error: any = new Error(`Route ${req.originalUrl} not found`);
+    error.statusCode = 404;
+    next(error);
+});
+
+app.use(globalErrorHandler)
 
  export default app;
  
