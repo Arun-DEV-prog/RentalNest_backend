@@ -1,7 +1,7 @@
 import type Stripe from "stripe";
-import { prisma } from "../../lib/prisma";
-import { stripe } from "../../lib/stripe";
-import config from "../../config";
+import { prisma } from "../../lib/prisma.js";
+import { stripe } from "../../lib/stripe.js";
+import config from "../../config/index.js";
 
 const getAppBaseUrl = () => {
   const appUrl = config.app_url?.trim();

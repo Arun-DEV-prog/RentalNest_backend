@@ -5,13 +5,14 @@
   "license": "MIT",
   "author": "arun",
   "type": "module",
-  "main": "server.ts",
+  "main": "dist/server.js",
   "prisma": {
     "seed": "tsx prisma/seed.ts"
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
+    "build": "tsup",
+    "vercel-build": "npx prisma generate && npm run build",
     "start": "node dist/server.js",
     "prisma:migrate": "npm run prisma:build-schema && npx prisma migrate dev",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +22,7 @@
     "@types/node": "^26.1.0",
     "@types/pg": "^8.20.0",
     "prisma": "^7.8.0",
+    "tsup": "^8.5.1",
     "tsx": "^4.23.0",
     "typescript": "^6.0.3"
   },

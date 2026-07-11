@@ -1,8 +1,8 @@
 import bcrypt from "bcryptjs";
-import { prisma } from "../../lib/prisma";
-import type { ILoginUser } from "./auth.interface"
-import { jwtUtils } from "../../utils/jwt";
-import config from "../../config";
+import { prisma } from "../../lib/prisma.js";
+import type { ILoginUser } from "./auth.interface.js"
+import { jwtUtils } from "../../utils/jwt.js";
+import config from "../../config/index.js";
 ;
 
 const normalizeExpiresIn = (value: string | undefined): NonNullable<import("jsonwebtoken").SignOptions["expiresIn"]> => {

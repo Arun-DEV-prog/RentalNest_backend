@@ -1,5 +1,5 @@
-import { prisma } from "../../lib/prisma"
-import type { IPropertyFilter } from "./properties.interface"
+import { prisma } from "../../lib/prisma.js"
+import type { IPropertyFilter } from "./properties.interface.js"
 
 const getAllProperties = async(filters: IPropertyFilter) => {
     const {

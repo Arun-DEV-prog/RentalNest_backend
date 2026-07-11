@@ -1,10 +1,10 @@
 import type { NextFunction, Request, Response } from "express";
-import type { usersRole } from "../../generated/prisma/enums";
-import { catchAsync } from "../utils/catchAsync";
-import { jwtUtils } from "../utils/jwt";
-import config from "../config";
+import type { usersRole } from "@prisma/client";
+import { catchAsync } from "../utils/catchAsync.js";
+import { jwtUtils } from "../utils/jwt.js";
+import config from "../config/index.js";
 import type { JwtPayload } from "jsonwebtoken";
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 
 
 

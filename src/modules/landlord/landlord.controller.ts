@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
-import { catchAsync } from "../../utils/catchAsync";
-import { landlordService } from "./landlord.service";
-import { sendResponse } from "../../utils/sendResponse";
+import { catchAsync } from "../../utils/catchAsync.js";
+import { landlordService } from "./landlord.service.js";
+import { sendResponse } from "../../utils/sendResponse.js";
 import httpStatus from 'http-status';
 
 

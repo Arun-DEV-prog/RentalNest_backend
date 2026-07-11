@@ -1,6 +1,6 @@
-import { prisma } from "../../lib/prisma"
-import type { IRentRuquest } from "./rentreq.interface"
-import { usersRole } from '../../../generated/prisma/enums';
+import { prisma } from "../../lib/prisma.js"
+import type { IRentRuquest } from "./rentreq.interface.js"
+import { usersRole } from '@prisma/client';
 
 
 

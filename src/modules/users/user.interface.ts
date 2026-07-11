@@ -1,6 +1,6 @@
-import type { usersRole } from "../../../generated/prisma/enums";
+import type { usersRole } from "../../../generated/prisma/enums.js";
 
-export interface RegisterUserPayload{
+export interface RegisterUserPayload {
     id?: string,
     name: string,
     email: string,

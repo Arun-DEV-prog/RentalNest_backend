@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
-import { catchAsync } from "../../utils/catchAsync";
-import { propertiesService } from "./properties.service";
-import { sendResponse } from "../../utils/sendResponse";
+import { catchAsync } from "../../utils/catchAsync.js";
+import { propertiesService } from "./properties.service.js";
+import { sendResponse } from "../../utils/sendResponse.js";
 import httpStatus from 'http-status';
 
 const getAllProperties = catchAsync(async(req: Request, res: Response, next: NextFunction) => {

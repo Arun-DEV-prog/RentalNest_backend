@@ -1,16 +1,13 @@
 import type { NextFunction, Request, Response } from "express";
-import { catchAsync } from "../../utils/catchAsync";
-import { rentRequestService } from "./rentreq.service";
-import { sendResponse } from "../../utils/sendResponse";
+import { catchAsync } from "../../utils/catchAsync.js";
+import { rentRequestService } from "./rentreq.service.js";
+import { sendResponse } from "../../utils/sendResponse.js";
 import httpStatus from 'http-status';
-import { use } from "react";
-
-
 
 const  createRentRuquest= catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
      const payload= req.body;
      const userId= req.users?.id
-     const userTentent= req.users?.role=='tentent';
+     const userTentent= req.users?.role=='tenant';
     
      const result= await rentRequestService.createRntRequestIntDB(userId as string, payload, userTentent)
 
@@ -29,7 +26,7 @@ const  createRentRuquest= catchAsync(async(req: Request, res: Response, next: Ne
 
 const getUserRental=catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
       const userId= req.users?.id;
-      const isTentent= req.users?.role==='tentent';
+      const isTentent= req.users?.role==='tenant';
 
 
       const data= await rentRequestService.getRentalRqt(userId as string, isTentent);
@@ -46,7 +43,7 @@ const getUserRental=catchAsync(async(req: Request, res: Response, next: NextFunc
 const  getRentRuquestID= catchAsync(async(req: Request, res: Response, next: NextFunction)=>{
     const userId= req.users?.id;
     const rentId= req.params?.id;
-    const isTentent= req.users?.role==='tentent';
+    const isTentent= req.users?.role==='tenant';
 
 
      const data= await rentRequestService.getRentRqtById(userId as string, rentId as string, isTentent as boolean);

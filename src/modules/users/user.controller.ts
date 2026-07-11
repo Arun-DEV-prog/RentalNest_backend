@@ -1,8 +1,8 @@
 import type { NextFunction, Request, Response } from "express";
-import { catchAsync } from "../../utils/catchAsync";
-import { userService } from "./user.service";
-import type { RegisterUserPayload } from "./user.interface";
-import { sendResponse } from "../../utils/sendResponse";
+import { catchAsync } from "../../utils/catchAsync.js";
+import { userService } from "./user.service.js";
+import type { RegisterUserPayload } from "./user.interface.js";
+import { sendResponse } from "../../utils/sendResponse.js";
 import httpStatus from 'http-status';
 import { group } from "node:console";
 

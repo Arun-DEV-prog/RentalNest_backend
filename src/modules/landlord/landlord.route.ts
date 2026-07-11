@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { landlordController } from "./landlord.controller";
-import { auth } from "../../middleware/auth";
-import { usersRole } from "../../../generated/prisma/enums";
+import { landlordController } from "./landlord.controller.js";
+import { auth } from "../../middleware/auth.js";
+import { usersRole } from "@prisma/client";
 
 
 

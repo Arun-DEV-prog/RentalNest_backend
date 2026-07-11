@@ -1,6 +1,6 @@
 import { time } from "node:console";
-import { prisma } from "../../lib/prisma"
-import type { ILandlord, IUpdatedLandlord } from "./landlord.interface"
+import { prisma } from "../../lib/prisma.js"
+import type { ILandlord, IUpdatedLandlord } from "./landlord.interface.js"
 
 
 

@@ -1,9 +1,9 @@
 import type { Request, Response } from "express";
 import { Router } from "express";
 import Stripe from "stripe";
-import config from "../../config";
-import { prisma } from "../../lib/prisma";
-import { stripe } from "../../lib/stripe";
+import config from "../../config/index.js";
+import { prisma } from "../../lib/prisma.js";
+import { stripe } from "../../lib/stripe.js";
 
 const router = Router();
 

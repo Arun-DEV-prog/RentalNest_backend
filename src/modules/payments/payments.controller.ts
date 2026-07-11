@@ -1,8 +1,8 @@
 import type { NextFunction, Request, Response } from "express";
 import httpStatus from "http-status";
-import { catchAsync } from "../../utils/catchAsync";
-import { sendResponse } from "../../utils/sendResponse";
-import { paymentService } from "./payments.service";
+import { catchAsync } from "../../utils/catchAsync.js";
+import { sendResponse } from "../../utils/sendResponse.js";
+import { paymentService } from "./payments.service.js";
 
 const createPayment = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
   const userId = req.users?.id;

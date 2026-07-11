@@ -2,18 +2,18 @@ import type { Application, NextFunction, Request, Response } from "express";
 import express from "express"
 import cors from "cors"
 import config from "./config/index.js";
-import { userRoute } from "./modules/users/user.route";
+import { userRoute } from "./modules/users/user.route.js";
 import cookieParser from "cookie-parser";
-import { authRoute } from "./modules/auth/auth.route";
-import { landlordRoute } from "./modules/landlord/landlord.route";
-import { rentrequestRoute } from "./modules/rentrequest/rentreq.route";
-import { propertiesRoute } from "./modules/properties/properties.route";
-import { adminRoute } from "./modules/admin/admin.route";
-import { paymentRoute } from "./modules/payments/payments.route";
-import { webhookRoute } from "./modules/payments/webhook.route";
-import { reviewRoute } from "./modules/reviews/reviews.route";
-import { paymentService } from "./modules/payments/payments.service";
-import { globalErrorHandler } from "./middleware/globalErrorhandler";
+import { authRoute } from "./modules/auth/auth.route.js";
+import { landlordRoute } from "./modules/landlord/landlord.route.js";
+import { rentrequestRoute } from "./modules/rentrequest/rentreq.route.js";
+import { propertiesRoute } from "./modules/properties/properties.route.js";
+import { adminRoute } from "./modules/admin/admin.route.js";
+import { paymentRoute } from "./modules/payments/payments.route.js";
+import { webhookRoute } from "./modules/payments/webhook.route.js";
+import { reviewRoute } from "./modules/reviews/reviews.route.js";
+import { paymentService } from "./modules/payments/payments.service.js";
+import { globalErrorHandler } from "./middleware/globalErrorhandler.js";
 
 
 

@@ -1,10 +1,10 @@
 import type { Request, Response, NextFunction } from "express";
-import { catchAsync } from "../../utils/catchAsync";
-import { AuthService } from "./auth.service";
-import type { ILoginUser } from "./auth.interface";
+import { catchAsync } from "../../utils/catchAsync.js";
+import { AuthService } from "./auth.service.js";
+import type { ILoginUser } from "./auth.interface.js";
 import { config } from "dotenv";
 
-import { sendResponse } from "../../utils/sendResponse";
+import { sendResponse } from "../../utils/sendResponse.js";
 import httpStatus from 'http-status';
 
 const userLogin = catchAsync(async (req: Request, res: Response, next: NextFunction) => {

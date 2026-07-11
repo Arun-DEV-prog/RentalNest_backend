@@ -1,4 +1,4 @@
-import { prisma } from "../../lib/prisma";
+import { prisma } from "../../lib/prisma.js";
 
 const createReview = async (userId: string, payload: { rentalId: string; rating: number; comment?: string }) => {
   const rental = await prisma.rentalrequest.findUniqueOrThrow({

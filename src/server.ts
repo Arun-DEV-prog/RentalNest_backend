@@ -1,6 +1,8 @@
-import app from "./app";
+import app from "./app.js";
 import config from "./config/index.js";
-import { prisma } from "./lib/prisma";
+import { prisma } from "./lib/prisma.js";
+
+const port = Number(process.env.PORT ?? config.port ?? 5000);
 
 
 
@@ -11,9 +13,9 @@ const main=async()=>{
   try{
        
         await prisma.$connect();
-          console.log("databse connect")
-       app.listen(5000,()=>{
-          console.log(`server is running on port 5000 ${config.port}`)
+          console.log("database connected")
+       app.listen(port,()=>{
+          console.log(`server is running on port ${port}`)
        })
      }catch(error){
         console.error("Error starting the server", error)
@@ -25,4 +27,8 @@ const main=async()=>{
 
 }
 
-main();
+if (process.env.VERCEL !== "1") {
+  main();
+}
+
+export default app;

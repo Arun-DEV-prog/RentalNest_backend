@@ -1,5 +1,5 @@
-import { prisma } from "../../lib/prisma"
-import type { IAdminUserFilter, IAdminPropertyFilter, IAdminRentalFilter } from "./admin.interface"
+import { prisma } from "../../lib/prisma.js"
+import type { IAdminUserFilter, IAdminPropertyFilter, IAdminRentalFilter } from "./admin.interface.js"
 
 const getAllUsers = async(filters: IAdminUserFilter) => {
     const { page = 1, limit = 10, role, status } = filters;
