@@ -1749,12 +1749,13 @@
               }
             },
             "url": {
-              "raw": "http://localhost:5000/api/auth/login",
-              "protocol": "http",
+              "raw": "https://rentnest-backend-six.vercel.app/api/auth/login",
+              "protocol": "https",
               "host": [
-                "localhost"
+                "rentnest-backend-six",
+                "vercel",
+                "app"
               ],
-              "port": "5000",
               "path": [
                 "api",
                 "auth",
@@ -1762,7 +1763,109 @@
               ]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "Login Admin",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"Adminarun11.roy@example.com\",\r\n  \"password\": \"StrongPassword123!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://rentnest-backend-six.vercel.app/api/auth/login",
+                  "protocol": "https",
+                  "host": [
+                    "rentnest-backend-six",
+                    "vercel",
+                    "app"
+                  ],
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "http://localhost:5000"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sat, 11 Jul 2026 08:34:13 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"2b0-mQRlUUWMQUwZAtd2wxO/m0P1fEs\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3NmZlZGVhLWQ0ZmEtNGViNy1iNzRjLTBhODVmOTZlMGU4MyIsImVtYWlsIjoiQWRtaW5hcnVuMTEucm95QGV4YW1wbGUuY29tIiwicm9sZSI6ImFkbWluIiwibmFtZSI6IkRlbW9BZG1pbiBSb3kiLCJpYXQiOjE3ODM3NTg4NTMsImV4cCI6MTc4NDM2MzY1M30.0zvBC_Ur_7671O3VyNpPFjWQn9fLV08EV_uFL2DU4rA; Max-Age=86400; Path=/; Expires=Sun, 12 Jul 2026 08:34:13 GMT; HttpOnly; Secure; SameSite=None"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3NmZlZGVhLWQ0ZmEtNGViNy1iNzRjLTBhODVmOTZlMGU4MyIsImVtYWlsIjoiQWRtaW5hcnVuMTEucm95QGV4YW1wbGUuY29tIiwicm9sZSI6ImFkbWluIiwibmFtZSI6IkRlbW9BZG1pbiBSb3kiLCJpYXQiOjE3ODM3NTg4NTMsImV4cCI6MTc4NDk2ODQ1M30.r8gKv1M4T_mRvFXMzrCjycZV9mAnRUdvjM__nyjATG8; Max-Age=604800; Path=/; Expires=Sat, 18 Jul 2026 08:34:13 GMT; HttpOnly; Secure; SameSite=None"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "bom1::iad1::rx76r-1783758850821-b1fd0bc92eca"
+                },
+                {
+                  "key": "content-length",
+                  "value": "688"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"user successfully Login\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3NmZlZGVhLWQ0ZmEtNGViNy1iNzRjLTBhODVmOTZlMGU4MyIsImVtYWlsIjoiQWRtaW5hcnVuMTEucm95QGV4YW1wbGUuY29tIiwicm9sZSI6ImFkbWluIiwibmFtZSI6IkRlbW9BZG1pbiBSb3kiLCJpYXQiOjE3ODM3NTg4NTMsImV4cCI6MTc4NDM2MzY1M30.0zvBC_Ur_7671O3VyNpPFjWQn9fLV08EV_uFL2DU4rA\",\n        \"refresToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3NmZlZGVhLWQ0ZmEtNGViNy1iNzRjLTBhODVmOTZlMGU4MyIsImVtYWlsIjoiQWRtaW5hcnVuMTEucm95QGV4YW1wbGUuY29tIiwicm9sZSI6ImFkbWluIiwibmFtZSI6IkRlbW9BZG1pbiBSb3kiLCJpYXQiOjE3ODM3NTg4NTMsImV4cCI6MTc4NDk2ODQ1M30.r8gKv1M4T_mRvFXMzrCjycZV9mAnRUdvjM__nyjATG8\"\n    }\n}"
+            }
+          ]
         },
         {
           "name": "Login Landlord",
@@ -2369,6 +2472,504 @@
               ],
               "cookie": [],
               "body": "{\n    \"success\": false,\n    \"statusCode\": 500,\n    \"message\": \"You already reviewed this rental\",\n    \"error\": \"You already reviewed this rental\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "get_all_users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"rentalId\":\"63cd67b1-e431-4995-ab8d-55311c4344ca\",\r\n  \"rating\": 5,\r\n  \"comment\":\"Nice\"\r\n  }"
+            },
+            "url": {
+              "raw": "https://rentnest-backend-six.vercel.app/api/admin/users",
+              "protocol": "https",
+              "host": [
+                "rentnest-backend-six",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "users"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get_all_users",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n \"rentalId\":\"63cd67b1-e431-4995-ab8d-55311c4344ca\",\r\n  \"rating\": 5,\r\n  \"comment\":\"Nice\"\r\n  }"
+                },
+                "url": {
+                  "raw": "https://rentnest-backend-six.vercel.app/api/admin/users",
+                  "protocol": "https",
+                  "host": [
+                    "rentnest-backend-six",
+                    "vercel",
+                    "app"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "http://localhost:5000"
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sat, 11 Jul 2026 08:34:38 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"b6a-q2vQ5AtcEZthlTD3YE4xhHEycRw\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "bom1::iad1::982fz-1783758875708-153ea9a5bb74"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Users fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"36747282-15f7-40bd-a41b-236ac5c8fab5\",\n            \"name\": \"Landlord Roy\",\n            \"email\": \"aaalandlordarun11.roy@example.com\",\n            \"phone\": \"+8801712345678\",\n            \"role\": \"landlord\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gazipur\",\n            \"created_at\": \"2026-07-11T07:22:05.744Z\",\n            \"updated_at\": \"2026-07-11T07:22:05.744Z\"\n        },\n        {\n            \"id\": \"151f4649-1ee1-46b6-b115-c25d949575d5\",\n            \"name\": \"Landlord Roy\",\n            \"email\": \"alandlordarun11.roy@example.com\",\n            \"phone\": \"+8801712345678\",\n            \"role\": \"landlord\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gazipur\",\n            \"created_at\": \"2026-07-11T07:13:44.403Z\",\n            \"updated_at\": \"2026-07-11T07:13:44.403Z\"\n        },\n        {\n            \"id\": \"48d700db-5c8d-42e9-93a4-4f43bf02e829\",\n            \"name\": \"Arun Kumar Roy\",\n            \"email\": \"arun1.roy@example.com\",\n            \"phone\": \"+8801712345678\",\n            \"role\": \"tenant\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gazipur\",\n            \"created_at\": \"2026-07-11T07:12:59.039Z\",\n            \"updated_at\": \"2026-07-11T07:12:59.039Z\"\n        },\n        {\n            \"id\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n            \"name\": \"Landlord Roy\",\n            \"email\": \"landlordarun11.roy@example.com\",\n            \"phone\": \"+8801712345678\",\n            \"role\": \"landlord\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gazipur\",\n            \"created_at\": \"2026-07-10T19:54:53.003Z\",\n            \"updated_at\": \"2026-07-10T19:54:53.003Z\"\n        },\n        {\n            \"id\": \"576fedea-d4fa-4eb7-b74c-0a85f96e0e83\",\n            \"name\": \"DemoAdmin Roy\",\n            \"email\": \"Adminarun11.roy@example.com\",\n            \"phone\": \"+8801712345678\",\n            \"role\": \"admin\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gazipur\",\n            \"created_at\": \"2026-07-10T19:53:14.636Z\",\n            \"updated_at\": \"2026-07-10T19:53:14.636Z\"\n        },\n        {\n            \"id\": \"40133e15-388a-44c2-977e-687bfe60245e\",\n            \"name\": \"Arun Kumar Roy\",\n            \"email\": \"arun.roy@example.com\",\n            \"phone\": \"+8801712345678\",\n            \"role\": \"tenant\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gazipur\",\n            \"created_at\": \"2026-07-10T19:51:59.796Z\",\n            \"updated_at\": \"2026-07-10T19:51:59.796Z\"\n        },\n        {\n            \"id\": \"8c51b7d1-c18e-4959-a82e-f2eb45f9c511\",\n            \"name\": \"Admin12\",\n            \"email\": \"admin12@gmail.com\",\n            \"phone\": \"014850384\",\n            \"role\": \"tenant\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gopalganj\",\n            \"created_at\": \"2026-07-10T10:28:10.125Z\",\n            \"updated_at\": \"2026-07-10T10:28:10.125Z\"\n        },\n        {\n            \"id\": \"18188bf5-849b-4829-a558-644f6502c8f2\",\n            \"name\": \"landlord\",\n            \"email\": \"landlord1@gmail.com\",\n            \"phone\": \"014850384\",\n            \"role\": \"landlord\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gopalganj\",\n            \"created_at\": \"2026-07-10T10:25:58.425Z\",\n            \"updated_at\": \"2026-07-10T10:25:58.425Z\"\n        },\n        {\n            \"id\": \"7ff92f9d-af42-46a4-932c-4a652a5134fc\",\n            \"name\": \"Tenant\",\n            \"email\": \"tenant1@gmail.com\",\n            \"phone\": \"014850384\",\n            \"role\": \"tenant\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gopalganj\",\n            \"created_at\": \"2026-07-10T10:24:12.638Z\",\n            \"updated_at\": \"2026-07-10T10:24:12.638Z\"\n        },\n        {\n            \"id\": \"ff785bb9-e2d9-4a17-9802-79e1c2be7633\",\n            \"name\": \"tentent roy\",\n            \"email\": \"landlord@gmail.com\",\n            \"phone\": \"01866999458\",\n            \"role\": \"landlord\",\n            \"status\": \"active\",\n            \"divison\": \"Dhaka\",\n            \"district\": \"Gopalganj\",\n            \"created_at\": \"2026-07-09T18:34:17.475Z\",\n            \"updated_at\": \"2026-07-09T18:34:17.475Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 17,\n        \"page\": 1,\n        \"limit\": 10,\n        \"pages\": 2\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "user_status_update",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "   {\r\n     \"status\":\"banned\" \r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://rentnest-backend-six.vercel.app/api/admin/users/36747282-15f7-40bd-a41b-236ac5c8fab5",
+              "protocol": "https",
+              "host": [
+                "rentnest-backend-six",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "36747282-15f7-40bd-a41b-236ac5c8fab5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "user_status_update",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "   {\r\n     \"status\":\"banned\" \r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "https://rentnest-backend-six.vercel.app/api/admin/users/36747282-15f7-40bd-a41b-236ac5c8fab5",
+                  "protocol": "https",
+                  "host": [
+                    "rentnest-backend-six",
+                    "vercel",
+                    "app"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "36747282-15f7-40bd-a41b-236ac5c8fab5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "http://localhost:5000"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sat, 11 Jul 2026 08:43:59 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"121-PPJhJBgH3/MecfpnjLoxr6Ujey8\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "bom1::iad1::qg8tm-1783759436818-00dbd6b6470f"
+                },
+                {
+                  "key": "content-length",
+                  "value": "289"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User banned successfully\",\n    \"data\": {\n        \"id\": \"36747282-15f7-40bd-a41b-236ac5c8fab5\",\n        \"name\": \"Landlord Roy\",\n        \"email\": \"aaalandlordarun11.roy@example.com\",\n        \"role\": \"landlord\",\n        \"status\": \"banned\",\n        \"phone\": \"+8801712345678\",\n        \"divison\": \"Dhaka\",\n        \"district\": \"Gazipur\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get_all_properties",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"rentalId\":\"63cd67b1-e431-4995-ab8d-55311c4344ca\",\r\n  \"rating\": 5,\r\n  \"comment\":\"Nice\"\r\n  }"
+            },
+            "url": {
+              "raw": "https://rentnest-backend-six.vercel.app/api/admin/properties",
+              "protocol": "https",
+              "host": [
+                "rentnest-backend-six",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "properties"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get_all_properties",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n \"rentalId\":\"63cd67b1-e431-4995-ab8d-55311c4344ca\",\r\n  \"rating\": 5,\r\n  \"comment\":\"Nice\"\r\n  }"
+                },
+                "url": {
+                  "raw": "https://rentnest-backend-six.vercel.app/api/admin/properties",
+                  "protocol": "https",
+                  "host": [
+                    "rentnest-backend-six",
+                    "vercel",
+                    "app"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "properties"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "http://localhost:5000"
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sat, 11 Jul 2026 08:45:03 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"1255-YdOp+uXoNr98+Ze0nvcHBbhyjxs\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "bom1::iad1::vbvxb-1783759499452-c5019c6858a8"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Properties fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"6b3a12be-2420-4969-9d2b-eb1565d9d834\",\n            \"title\": \"To Let\",\n            \"dexcription\": \"A beautiful and spacious 3-bedroom apartment featuring modern fittings, excellent natural ventilation, and 24/7 security. Located in a prime residential neighborhood close to schools and shopping centers.\",\n            \"rent\": \"28000\",\n            \"bedrooms\": \"3\",\n            \"bathrooms\": \"3\",\n            \"size_sqft\": \"1450\",\n            \"floor\": \"4\",\n            \"availability\": true,\n            \"available_from\": \"2026-08-01\",\n            \"address\": \"House 42, Road 11, Banani\",\n            \"division\": \"Dhaka\",\n            \"images\": \"https://example.com/images/property-123.jpg\",\n            \"userId\": \"18188bf5-849b-4829-a558-644f6502c8f2\",\n            \"categoriesId\": 1,\n            \"propertiesId\": null,\n            \"categories\": {\n                \"id\": 1,\n                \"name\": \"Apartment\"\n            },\n            \"user\": {\n                \"id\": \"18188bf5-849b-4829-a558-644f6502c8f2\",\n                \"name\": \"landlord\",\n                \"email\": \"landlord1@gmail.com\",\n                \"phone\": \"014850384\"\n            },\n            \"rentalrequests\": []\n        },\n        {\n            \"id\": \"3fa998a5-b6fd-4dd8-8eca-afb8c05177ed\",\n            \"title\": \"To Let\",\n            \"dexcription\": \"A beautiful and spacious 3-bedroom apartment featuring modern fittings, excellent natural ventilation, and 24/7 security. Located in a prime residential neighborhood close to schools and shopping centers.\",\n            \"rent\": \"30000\",\n            \"bedrooms\": \"3\",\n            \"bathrooms\": \"3\",\n            \"size_sqft\": \"1450\",\n            \"floor\": \"4\",\n            \"availability\": true,\n            \"available_from\": \"2026-08-01\",\n            \"address\": \"House 42, Road 11, Banani\",\n            \"division\": \"Dhaka\",\n            \"images\": \"https://example.com/images/property-123.jpg\",\n            \"userId\": \"18188bf5-849b-4829-a558-644f6502c8f2\",\n            \"categoriesId\": 2,\n            \"propertiesId\": null,\n            \"categories\": {\n                \"id\": 2,\n                \"name\": \"House\"\n            },\n            \"user\": {\n                \"id\": \"18188bf5-849b-4829-a558-644f6502c8f2\",\n                \"name\": \"landlord\",\n                \"email\": \"landlord1@gmail.com\",\n                \"phone\": \"014850384\"\n            },\n            \"rentalrequests\": [\n                {\n                    \"id\": \"1fcc2a1a-c310-4249-b729-a0ecec503d99\",\n                    \"status\": \"active_completed\"\n                }\n            ]\n        },\n        {\n            \"id\": \"ee10a278-e88e-4dee-b9d7-8fe549659b86\",\n            \"title\": \"Modern 4 Bedroom Apartment\",\n            \"dexcription\": \"A spacious and well-furnished apartment located in a peaceful residential area with 24/7 security and parking.\",\n            \"rent\": \"253000\",\n            \"bedrooms\": \"3\",\n            \"bathrooms\": \"2\",\n            \"size_sqft\": \"1350\",\n            \"floor\": \"5\",\n            \"availability\": true,\n            \"available_from\": \"2026-08-01\",\n            \"address\": \"House #12, Road #5, Uttara, Dhaka\",\n            \"division\": \"Dhaka\",\n            \"images\": \"https://example.com/images/apartment-1.jpg\",\n            \"userId\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n            \"categoriesId\": 1,\n            \"propertiesId\": null,\n            \"categories\": {\n                \"id\": 1,\n                \"name\": \"Apartment\"\n            },\n            \"user\": {\n                \"id\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n                \"name\": \"Landlord Roy\",\n                \"email\": \"landlordarun11.roy@example.com\",\n                \"phone\": \"+8801712345678\"\n            },\n            \"rentalrequests\": [\n                {\n                    \"id\": \"fa3d01bb-8a24-4d3f-87cd-0e711e8ad3df\",\n                    \"status\": \"pending\"\n                },\n                {\n                    \"id\": \"63cd67b1-e431-4995-ab8d-55311c4344ca\",\n                    \"status\": \"active_completed\"\n                }\n            ]\n        },\n        {\n            \"id\": \"4dcf94f2-700e-417c-9af6-cae8a2f49a14\",\n            \"title\": \"Modern 3 Bedroom Apartment\",\n            \"dexcription\": \"A spacious and well-furnished apartment located in a peaceful residential area with 24/7 security and parking.\",\n            \"rent\": \"25000\",\n            \"bedrooms\": \"3\",\n            \"bathrooms\": \"2\",\n            \"size_sqft\": \"1350\",\n            \"floor\": \"5\",\n            \"availability\": true,\n            \"available_from\": \"2026-08-01\",\n            \"address\": \"House #12, Road #5, Uttara, Dhaka\",\n            \"division\": \"Dhaka\",\n            \"images\": \"https://example.com/images/apartment-1.jpg\",\n            \"userId\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n            \"categoriesId\": 1,\n            \"propertiesId\": null,\n            \"categories\": {\n                \"id\": 1,\n                \"name\": \"Apartment\"\n            },\n            \"user\": {\n                \"id\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n                \"name\": \"Landlord Roy\",\n                \"email\": \"landlordarun11.roy@example.com\",\n                \"phone\": \"+8801712345678\"\n            },\n            \"rentalrequests\": []\n        },\n        {\n            \"id\": \"ab82b66e-b15f-433e-ae2f-3b290f1cfe7f\",\n            \"title\": \"Modern 3 Bedroom Apartment\",\n            \"dexcription\": \"A spacious and well-furnished apartment located in a peaceful residential area with 24/7 security and parking.\",\n            \"rent\": \"25000\",\n            \"bedrooms\": \"3\",\n            \"bathrooms\": \"2\",\n            \"size_sqft\": \"1350\",\n            \"floor\": \"5\",\n            \"availability\": true,\n            \"available_from\": \"2026-08-01\",\n            \"address\": \"House #12, Road #5, Uttara, Dhaka\",\n            \"division\": \"Dhaka\",\n            \"images\": \"https://example.com/images/apartment-1.jpg\",\n            \"userId\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n            \"categoriesId\": 1,\n            \"propertiesId\": null,\n            \"categories\": {\n                \"id\": 1,\n                \"name\": \"Apartment\"\n            },\n            \"user\": {\n                \"id\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n                \"name\": \"Landlord Roy\",\n                \"email\": \"landlordarun11.roy@example.com\",\n                \"phone\": \"+8801712345678\"\n            },\n            \"rentalrequests\": []\n        },\n        {\n            \"id\": \"8b75813a-b5d5-4980-8aec-8ca8114e6c3e\",\n            \"title\": \"House Rent\",\n            \"dexcription\": \"new house for rent\",\n            \"rent\": \"100300\",\n            \"bedrooms\": \"3\",\n            \"bathrooms\": \"2\",\n            \"size_sqft\": \"500\",\n            \"floor\": \"2\",\n            \"availability\": true,\n            \"available_from\": \"2026-07-15\",\n            \"address\": \"Dhaka\",\n            \"division\": \"Dhaka\",\n            \"images\": null,\n            \"userId\": \"b722c442-6b18-4a5d-b732-34543fbc181e\",\n            \"categoriesId\": 2,\n            \"propertiesId\": null,\n            \"categories\": {\n                \"id\": 2,\n                \"name\": \"House\"\n            },\n            \"user\": {\n                \"id\": \"b722c442-6b18-4a5d-b732-34543fbc181e\",\n                \"name\": \"arun roy\",\n                \"email\": \"arun0@gmail.com\",\n                \"phone\": \"01866999458\"\n            },\n            \"rentalrequests\": []\n        }\n    ],\n    \"meta\": {\n        \"total\": 6,\n        \"page\": 1,\n        \"limit\": 10,\n        \"pages\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "get_all_rentals",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"rentalId\":\"63cd67b1-e431-4995-ab8d-55311c4344ca\",\r\n  \"rating\": 5,\r\n  \"comment\":\"Nice\"\r\n  }"
+            },
+            "url": {
+              "raw": "https://rentnest-backend-six.vercel.app/api/admin/rentals",
+              "protocol": "https",
+              "host": [
+                "rentnest-backend-six",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "rentals"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get_all_rentals",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n \"rentalId\":\"63cd67b1-e431-4995-ab8d-55311c4344ca\",\r\n  \"rating\": 5,\r\n  \"comment\":\"Nice\"\r\n  }"
+                },
+                "url": {
+                  "raw": "https://rentnest-backend-six.vercel.app/api/admin/rentals",
+                  "protocol": "https",
+                  "host": [
+                    "rentnest-backend-six",
+                    "vercel",
+                    "app"
+                  ],
+                  "path": [
+                    "api",
+                    "admin",
+                    "rentals"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": ":status",
+                  "value": 200
+                },
+                {
+                  "key": "access-control-allow-credentials",
+                  "value": "true"
+                },
+                {
+                  "key": "access-control-allow-origin",
+                  "value": "http://localhost:5000"
+                },
+                {
+                  "key": "age",
+                  "value": "0"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "public, max-age=0, must-revalidate"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Sat, 11 Jul 2026 09:40:30 GMT"
+                },
+                {
+                  "key": "etag",
+                  "value": "W/\"8e0-1nBA7XGS3qGPOyewVDlnVo7ihMA\""
+                },
+                {
+                  "key": "server",
+                  "value": "Vercel"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=63072000; includeSubDomains; preload"
+                },
+                {
+                  "key": "vary",
+                  "value": "Origin"
+                },
+                {
+                  "key": "x-powered-by",
+                  "value": "Express"
+                },
+                {
+                  "key": "x-vercel-cache",
+                  "value": "MISS"
+                },
+                {
+                  "key": "x-vercel-id",
+                  "value": "bom1::iad1::hwjvr-1783762826356-b9ce82e1c1ef"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Rental requests fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"fa3d01bb-8a24-4d3f-87cd-0e711e8ad3df\",\n            \"properties_id\": \"ee10a278-e88e-4dee-b9d7-8fe549659b86\",\n            \"userId\": \"40133e15-388a-44c2-977e-687bfe60245e\",\n            \"move_in_date\": \"12-3-2026\",\n            \"lease_duration\": \"3 month\",\n            \"status\": \"pending\",\n            \"created_at\": \"2026-07-11T07:14:47.736Z\",\n            \"updated_at\": \"2026-07-11T07:14:47.736Z\",\n            \"user\": {\n                \"id\": \"40133e15-388a-44c2-977e-687bfe60245e\",\n                \"name\": \"Arun Kumar Roy\",\n                \"email\": \"arun.roy@example.com\",\n                \"phone\": \"+8801712345678\",\n                \"role\": \"tenant\"\n            },\n            \"properties\": {\n                \"id\": \"ee10a278-e88e-4dee-b9d7-8fe549659b86\",\n                \"title\": \"Modern 4 Bedroom Apartment\",\n                \"rent\": \"253000\",\n                \"address\": \"House #12, Road #5, Uttara, Dhaka\",\n                \"user\": {\n                    \"id\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n                    \"name\": \"Landlord Roy\",\n                    \"email\": \"landlordarun11.roy@example.com\"\n                }\n            }\n        },\n        {\n            \"id\": \"63cd67b1-e431-4995-ab8d-55311c4344ca\",\n            \"properties_id\": \"ee10a278-e88e-4dee-b9d7-8fe549659b86\",\n            \"userId\": \"40133e15-388a-44c2-977e-687bfe60245e\",\n            \"move_in_date\": \"12-3-2026\",\n            \"lease_duration\": \"3 month\",\n            \"status\": \"active_completed\",\n            \"created_at\": \"2026-07-10T21:02:44.013Z\",\n            \"updated_at\": \"2026-07-11T07:28:29.021Z\",\n            \"user\": {\n                \"id\": \"40133e15-388a-44c2-977e-687bfe60245e\",\n                \"name\": \"Arun Kumar Roy\",\n                \"email\": \"arun.roy@example.com\",\n                \"phone\": \"+8801712345678\",\n                \"role\": \"tenant\"\n            },\n            \"properties\": {\n                \"id\": \"ee10a278-e88e-4dee-b9d7-8fe549659b86\",\n                \"title\": \"Modern 4 Bedroom Apartment\",\n                \"rent\": \"253000\",\n                \"address\": \"House #12, Road #5, Uttara, Dhaka\",\n                \"user\": {\n                    \"id\": \"35131912-ea17-4c1f-9d1d-daa6e4a1fa32\",\n                    \"name\": \"Landlord Roy\",\n                    \"email\": \"landlordarun11.roy@example.com\"\n                }\n            }\n        },\n        {\n            \"id\": \"1fcc2a1a-c310-4249-b729-a0ecec503d99\",\n            \"properties_id\": \"3fa998a5-b6fd-4dd8-8eca-afb8c05177ed\",\n            \"userId\": \"7ff92f9d-af42-46a4-932c-4a652a5134fc\",\n            \"move_in_date\": \"20-3-27\",\n            \"lease_duration\": \"12 month\",\n            \"status\": \"active_completed\",\n            \"created_at\": \"2026-07-10T15:26:02.342Z\",\n            \"updated_at\": \"2026-07-10T16:54:25.477Z\",\n            \"user\": {\n                \"id\": \"7ff92f9d-af42-46a4-932c-4a652a5134fc\",\n                \"name\": \"Tenant\",\n                \"email\": \"tenant1@gmail.com\",\n                \"phone\": \"014850384\",\n                \"role\": \"tenant\"\n            },\n            \"properties\": {\n                \"id\": \"3fa998a5-b6fd-4dd8-8eca-afb8c05177ed\",\n                \"title\": \"To Let\",\n                \"rent\": \"30000\",\n                \"address\": \"House 42, Road 11, Banani\",\n                \"user\": {\n                    \"id\": \"18188bf5-849b-4829-a558-644f6502c8f2\",\n                    \"name\": \"landlord\",\n                    \"email\": \"landlord1@gmail.com\"\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"total\": 3,\n        \"page\": 1,\n        \"limit\": 10,\n        \"pages\": 1\n    }\n}"
             }
           ]
         }
